@@ -4,5 +4,5 @@ git add --all
 timestamp() {
   date +"at %H:%M:%S on %d/%m/%Y"
 }
-git commit -am "Regular auto-commit $(timestamp)"
+git commit -am "Nuevo commit"
 git push origin main
