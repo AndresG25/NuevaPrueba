@@ -1,5 +1,5 @@
 #!/bin/sh
-cd c:/Users/USUARIO/Desktop/MAESTRIA/Tesis-Maestria/NuevaPrueba
+cd C:/Users/USUARIO/Desktop/MAESTRIA/Tesis-Maestria/NuevaPrueba
 git add --all
 timestamp() {
   date +"at %H:%M:%S on %d/%m/%Y"
