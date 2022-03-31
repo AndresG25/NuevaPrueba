@@ -10,21 +10,23 @@
 library(shiny)
 library(shinydashboard)
 library(shinythemes)
-library(RMySQL)
 library(tidyverse)
 library(lubridate)
 library(plotly)
 library(dashboardthemes)
+library(RCurl)
 
 server <- function(input, output) {
     
-    database<- dbConnect(MySQL(), user="root", host="127.0.0.1", password="", dbname="estacion")
+    url <- 'https://raw.githubusercontent.com/AndresG25/NuevaPrueba/main/data1.csv'
+    query <- read.csv(url)
+    #database<- dbConnect(MySQL(), user="root", host="127.0.0.1", password="", dbname="estacion")
     
-    query<- dbGetQuery(database,statement ="SELECT * FROM dataestacion")
+    #query<- dbGetQuery(database,statement ="SELECT * FROM dataestacion")
     
-    query1 <- query %>% mutate(Fecha1 = parse_date_time(Fecha, "ymd HMS"))
+    #query1 <- query %>% mutate(Fecha1 = parse_date_time(Fecha, "ymd HMS"))
     
-    df <- as.data.frame(query1)
+    df <- as.data.frame(query)
 
     output$RPMane <- renderValueBox({
         pos <- df[nrow(df),]
