@@ -14,19 +14,18 @@ library(tidyverse)
 library(lubridate)
 library(plotly)
 library(dashboardthemes)
-library(RCurl)
 
 server <- function(input, output) {
     
     url <- 'https://raw.githubusercontent.com/AndresG25/NuevaPrueba/main/data1.csv'
-    query <- read.csv(url)
+    query1 <- read.csv(url)
     #database<- dbConnect(MySQL(), user="root", host="127.0.0.1", password="", dbname="estacion")
     
     #query<- dbGetQuery(database,statement ="SELECT * FROM dataestacion")
     
     #query1 <- query %>% mutate(Fecha1 = parse_date_time(Fecha, "ymd HMS"))
     
-    df <- as.data.frame(query)
+    df <- as.data.frame(query1)
 
     output$RPMane <- renderValueBox({
         pos <- df[nrow(df),]
@@ -116,6 +115,6 @@ server <- function(input, output) {
         
     })
     
-    dbDisconnect(database)
+    #dbDisconnect(database)
     
 }
