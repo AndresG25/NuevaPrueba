@@ -3226,4 +3226,4 @@ Calls: dbConnect -> dbConnect -> .local -> .Call
 Ejecución interrumpida
 Loading required package: DBI
 
-^C^C
+^C^CLoading required package: DBI
