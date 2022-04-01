@@ -3020,3 +3020,8 @@ The following objects are masked from 'package:base':
 
     date, intersect, setdiff, union
 
+Error in .local(drv, ...) : 
+  Failed to connect to database: Error: Can't connect to server on '127.0.0.1' (10061)
+Calls: dbConnect -> dbConnect -> .local -> .Call
+Ejecución interrumpida
+Loading required package: DBI
